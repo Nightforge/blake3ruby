@@ -1,8 +1,6 @@
 # Blake3ruby
 
 [![Gem Version](https://badge.fury.io/rb/blake3ruby.svg)](https://badge.fury.io/rb/blake3ruby)
-[![Maintainability](https://api.codeclimate.com/v1/badges/0b0b2b0b2b0b2b0b2b0b/maintainability)](https://codeclimate.com/github/andrewblond/blake3ruby/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/0b0b2b0b2b0b2b0b2b0b/test_coverage)](https://codeclimate.com/github/andrewblond/blake3ruby/test_coverage)
 
 This is a Ruby wrapper for the [BLAKE3](https://github.com/BLAKE3-team/BLAKE3) hash function written in Rust.
 
