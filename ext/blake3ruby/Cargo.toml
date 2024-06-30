@@ -1,6 +1,6 @@
 [package]
 name = "blake3ruby"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Nightforge <modo00@gmail.com>"]
 publish = false
@@ -9,6 +9,9 @@ publish = false
 crate-type = ["cdylib"]
 
 [dependencies]
-magnus = { version = "0.6.3" }
+magnus = { version = "0.6.4" }
 hex = { version = "0.4.3" }
-blake3 = "1.5.1"
+blake3 = { version = "1.5.1" }
+
+[package.metadata.magnus]
+rbconfig = true

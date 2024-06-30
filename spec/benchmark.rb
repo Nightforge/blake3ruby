@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require "digest"
 require "blake3ruby"
 require "benchmark"
 
-message = "This is a message to be hashed".freeze
+message = "This is a message to be hashed"
 
 n = 5_000_000
 
