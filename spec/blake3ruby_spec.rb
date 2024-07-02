@@ -8,11 +8,11 @@ RSpec.describe Blake3ruby do
   let(:derived_key) { "8d0d2f6f071f7fd8361c3f8044397b8fd2d8ee508a37398d6657c4e7edc790ad" }
 
   it "has a version number" do
-    expect(Blake3ruby::VERSION).not_to be nil
+    expect(Blake3ruby::VERSION).not_to be_nil
   end
 
   it "has a Blake3ruby module" do
-    expect(Blake3ruby).to be_a(Module)
+    expect(described_class).to be_a(Module)
   end
 
   it "responds to Blake3ruby.hexdigest method" do

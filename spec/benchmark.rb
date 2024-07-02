@@ -7,7 +7,8 @@ require "benchmark"
 messages = [
   "Short message",
   "This is a medium length message to be hashed",
-  "This is a much longer message designed to see how the algorithms perform when dealing with a significantly larger amount of data, which should provide a better overall benchmark of their performance.",
+  "This is a much longer message designed to see how the algorithms perform when dealing with a significantly larger" \
+  "amount of data, which should provide a better overall benchmark of their performance.",
   "A" * 1024
 ]
 

@@ -11,6 +11,7 @@ RuboCop::RakeTask.new
 
 require "rake/extensiontask"
 
+desc "Compile the Rust source code for the Blake3ruby extension"
 task build: :compile
 
 Rake::ExtensionTask.new("blake3ruby") do |ext|
