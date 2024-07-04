@@ -8,51 +8,51 @@ RSpec.describe Blake3ruby do
   let(:derived_key) { "8d0d2f6f071f7fd8361c3f8044397b8fd2d8ee508a37398d6657c4e7edc790ad" }
 
   it "has a version number" do
-    expect(Blake3ruby::VERSION).not_to be nil
+    expect(Blake3ruby::VERSION).not_to be_nil
   end
 
   it "has a Blake3ruby module" do
-    expect(Blake3ruby).to be_a(Module)
+    expect(described_class).to be_a(Module)
   end
 
   it "responds to Blake3ruby.hexdigest method" do
-    expect(Blake3ruby).to respond_to(:hexdigest)
+    expect(Digest::Blake3).to respond_to(:hexdigest)
   end
 
   it "calculate the correct hash" do
-    expect(Blake3ruby.hexdigest(test_string)).to eq(test_string_hash)
+    expect(Digest::Blake3.hexdigest(test_string)).to eq(test_string_hash)
   end
 
   it "calculate the correct hash with an empty string" do
-    expect(Blake3ruby.hexdigest("")).to eq(empty_string_hash)
+    expect(Digest::Blake3.hexdigest("")).to eq(empty_string_hash)
   end
 
   it "responds to Blake3ruby#derive_key method" do
-    expect(Blake3ruby).to respond_to(:derive_key)
+    expect(Digest::Blake3).to respond_to(:derive_key)
   end
 
   it "calculate the correct key with Blake3ruby#derive_key" do
-    expect(Blake3ruby.derive_key(test_string, "My Context")).to eq(derived_key)
+    expect(Digest::Blake3.derive_key(test_string, "My Context")).to eq(derived_key)
   end
 
   it "has a Blake3ruby::Hasher class" do
-    expect(Blake3ruby::Hasher).to be_a(Class)
+    expect(Digest::Blake3::Hasher).to be_a(Class)
   end
 
   it "responds to Blake3ruby::Hasher#new method" do
-    expect(Blake3ruby::Hasher).to respond_to(:new)
+    expect(Digest::Blake3::Hasher).to respond_to(:new)
   end
 
   it "responds to Blake3ruby::Hasher#update method" do
-    expect(Blake3ruby::Hasher.new).to respond_to(:update)
+    expect(Digest::Blake3::Hasher.new).to respond_to(:update)
   end
 
   it "responds to Blake3ruby::Hasher#finallize method" do
-    expect(Blake3ruby::Hasher.new).to respond_to(:finalize)
+    expect(Digest::Blake3::Hasher.new).to respond_to(:finalize)
   end
 
   it "calculate the correct hash with Blake3ruby::Hasher" do
-    hasher = Blake3ruby::Hasher.new
+    hasher = Digest::Blake3::Hasher.new
     hasher.update("Hello ")
     hasher.update("World")
     expect(hasher.finalize).to eq(test_string_hash)
