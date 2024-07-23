@@ -1,6 +1,6 @@
 [package]
 name = "blake3ruby"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2021"
 authors = ["Nightforge <modo00@gmail.com>"]
 publish = false
