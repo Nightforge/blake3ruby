@@ -5,7 +5,7 @@
 This is a Ruby wrapper for the [BLAKE3](https://github.com/BLAKE3-team/BLAKE3) hash function written in Rust.
 
 ## Requirements
-Tested on Ruby 3.1, 3.2 and 3.3.
+Tested on Ruby 3.1, 3.2, 3.3 and 3.4.
 You will need to have Rust installed on your system, and the `cargo` command available in your path.
 See [here](https://www.rust-lang.org/tools/install) for instructions on how to install Rust.
 Rust is only required to build the gem, not to use it.
@@ -72,7 +72,7 @@ In versions 0.1.0 and 0.1.1, the Blake3ruby namespace was available. Starting fr
 The performance of this gem is comparable to the performance of the [blake3](https://github.com/BLAKE3-team/BLAKE3)
 crate, which is written in Rust.
 
-The following benchmark was run on a 2015 MacBook Pro with a 2.5 GHz 4-Core Intel Core i7 processor and 16 GB of RAM.    
+The following benchmark was run on a 2015 MacBook Pro with a 2.5 GHz 4-Core Intel Core i7 processor and 16 GB of RAM.
  ```
 MD5 (13 chars):        6.141045   0.086745   6.227790 (  6.263524)
 SHA1 (13 chars):       6.230957   0.080145   6.311102 (  6.333384)
@@ -123,16 +123,16 @@ Fastest: blake3 with 8.499842999968678 seconds
 Slowest: RMD160 with 24.535302000120282 seconds
 ```
 
-Another benchmark was run on a 2022 MacBook Pro with a Apple M1 processor and 16 GB of RAM.    
+Another benchmark was run on a 2022 MacBook Pro with a Apple M1 processor and 16 GB of RAM.
  ```
-               user     system      total        real
-MD5:       4.080778   0.029457   4.110235 (  4.388991)
-SHA1:      3.736124   0.030763   3.766887 (  3.991860)
-SHA3-256:  3.511138   0.036125   3.547263 (  3.664061)
-SHA3-384:  4.009041   0.085845   4.094886 (  4.094987)
-SHA3-512:  4.078389   0.071463   4.149852 (  4.149982)
-RMD160:    2.965860   0.026660   2.992520 (  3.216815)
-blake3:    1.715370   0.004587   1.719957 (  1.719995)
+                           user     system      total        real
+MD5 (13 chars):        4.055481   0.041212   4.096693 (  4.097044)
+SHA1 (13 chars):       3.862285   0.050686   3.912971 (  3.928102)
+SHA3-256 (13 chars):   2.293100   0.052982   2.346082 (  2.346571)
+SHA3-384 (13 chars):   2.767608   0.079975   2.847583 (  2.847594)
+SHA3-512 (13 chars):   2.792520   0.070482   2.863002 (  2.862991)
+RMD160 (13 chars):     2.842812   0.036370   2.879182 (  3.097712)
+blake3 (13 chars):     1.208742   0.004124   1.212866 (  1.212986)
 ```
 
 In both cases, the `blake3ruby` gem was about 2.5 times faster than the md5, sha1, sha3-256, sha3-384, sha3-512, and rmd160 digest algorithms.
