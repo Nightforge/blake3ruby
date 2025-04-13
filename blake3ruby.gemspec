@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary = "Ruby bindings for the blake3 hash function"
   spec.description = "Ruby bindings for the blake3 hash function using the Rust implementation"
   spec.homepage = "https://github.com/Nightforge/blake3ruby"
-  spec.required_ruby_version = ">= 3.0"
+  spec.required_ruby_version = ">= 3.1"
   spec.required_rubygems_version = ">= 3.3.11"
   spec.licenses = %w[MIT Ruby]
 
