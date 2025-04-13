@@ -5,7 +5,7 @@
 This is a Ruby wrapper for the [BLAKE3](https://github.com/BLAKE3-team/BLAKE3) hash function written in Rust.
 
 ## Requirements
-Tested on Ruby 3.1, 3.2 and 3.3.
+Tested on Ruby 3.1, 3.2, 3.3 and 3.4.
 You will need to have Rust installed on your system, and the `cargo` command available in your path.
 See [here](https://www.rust-lang.org/tools/install) for instructions on how to install Rust.
 Rust is only required to build the gem, not to use it.
@@ -72,7 +72,7 @@ In versions 0.1.0 and 0.1.1, the Blake3ruby namespace was available. Starting fr
 The performance of this gem is comparable to the performance of the [blake3](https://github.com/BLAKE3-team/BLAKE3)
 crate, which is written in Rust.
 
-The following benchmark was run on a 2015 MacBook Pro with a 2.5 GHz 4-Core Intel Core i7 processor and 16 GB of RAM.    
+The following benchmark was run on a 2015 MacBook Pro with a 2.5 GHz 4-Core Intel Core i7 processor and 16 GB of RAM.
  ```
 MD5 (13 chars):        6.141045   0.086745   6.227790 (  6.263524)
 SHA1 (13 chars):       6.230957   0.080145   6.311102 (  6.333384)
@@ -123,7 +123,7 @@ Fastest: blake3 with 8.499842999968678 seconds
 Slowest: RMD160 with 24.535302000120282 seconds
 ```
 
-Another benchmark was run on a 2022 MacBook Pro with a Apple M1 processor and 16 GB of RAM.    
+Another benchmark was run on a 2022 MacBook Pro with a Apple M1 processor and 16 GB of RAM.
  ```
                user     system      total        real
 MD5:       4.080778   0.029457   4.110235 (  4.388991)
