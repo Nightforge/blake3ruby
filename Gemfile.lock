@@ -1,18 +1,18 @@
 PATH
   remote: .
   specs:
-    blake3ruby (0.3.0)
+    blake3ruby (0.3.1)
 
 GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.3)
     diff-lcs (1.6.1)
-    json (2.10.2)
+    json (2.11.3)
     language_server-protocol (3.17.0.4)
     lint_roller (1.1.0)
-    parallel (1.26.3)
-    parser (3.3.7.4)
+    parallel (1.27.0)
+    parser (3.3.8.0)
       ast (~> 2.4.1)
       racc
     prism (1.4.0)
@@ -38,7 +38,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.2)
-    rubocop (1.75.2)
+    rubocop (1.75.3)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -55,7 +55,7 @@ GEM
     rubocop-rake (0.7.1)
       lint_roller (~> 1.1)
       rubocop (>= 1.72.1)
-    rubocop-rspec (3.5.0)
+    rubocop-rspec (3.6.0)
       lint_roller (~> 1.1)
       rubocop (~> 1.72, >= 1.72.1)
     ruby-progressbar (1.13.0)
