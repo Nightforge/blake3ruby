@@ -5,7 +5,7 @@
 This is a Ruby wrapper for the [BLAKE3](https://github.com/BLAKE3-team/BLAKE3) hash function written in Rust.
 
 ## Requirements
-Tested on Ruby 3.1, 3.2, 3.3 and 3.4.
+Tested on Ruby 3.3, 3.4 and 4.0.
 You will need to have Rust installed on your system, and the `cargo` command available in your path.
 See [here](https://www.rust-lang.org/tools/install) for instructions on how to install Rust.
 Rust is only required to build the gem, not to use it.
