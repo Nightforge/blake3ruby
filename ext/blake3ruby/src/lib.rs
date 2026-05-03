@@ -1,4 +1,4 @@
-use magnus::{define_module, class, function, method, prelude::*, Error};
+use magnus::{function, method, prelude::*, Error, Ruby};
 
 fn hexdigest(subject: String) -> String {
     let hash = blake3::hash(subject.as_bytes());
@@ -38,14 +38,14 @@ impl MutHasher {
 }
 
 #[magnus::init]
-fn init() -> Result<(), Error> {
-    let digest = define_module("Digest")?;
+fn init(ruby: &Ruby) -> Result<(), Error> {
+    let digest = ruby.define_module("Digest")?;
     let blake3 = digest.define_module("Blake3")?;
-    
+
     blake3.define_singleton_method("hexdigest", function!(hexdigest, 1))?;
     blake3.define_singleton_method("derive_key", function!(derive_key, 2))?;
 
-    let class = blake3.define_class("Hasher", class::object())?;
+    let class = blake3.define_class("Hasher", ruby.class_object())?;
     class.define_singleton_method("new", function!(MutHasher::new, 0))?;
     class.define_method("update", method!(MutHasher::update, 1))?;
     class.define_method("finalize", method!(MutHasher::finalize, 0))?;

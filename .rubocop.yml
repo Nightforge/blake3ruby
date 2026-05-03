@@ -1,10 +1,10 @@
-require:
+plugins:
   - rubocop-rspec
   - rubocop-rake
 
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 3.1
+  TargetRubyVersion: 3.3
 
 Style/StringLiterals:
   Enabled: true
@@ -16,3 +16,7 @@ Style/StringLiteralsInInterpolation:
 
 Layout/LineLength:
   Max: 120
+
+RSpec/Output:
+  Exclude:
+    - spec/benchmark.rb
