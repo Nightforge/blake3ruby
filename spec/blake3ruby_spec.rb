@@ -47,7 +47,7 @@ RSpec.describe Blake3ruby do
     expect(Digest::Blake3::Hasher.new).to respond_to(:update)
   end
 
-  it "responds to Blake3ruby::Hasher#finallize method" do
+  it "responds to Blake3ruby::Hasher#finalize method" do
     expect(Digest::Blake3::Hasher.new).to respond_to(:finalize)
   end
 
@@ -56,5 +56,38 @@ RSpec.describe Blake3ruby do
     hasher.update("Hello ")
     hasher.update("World")
     expect(hasher.finalize).to eq(test_string_hash)
+  end
+
+  it "produces a 64-character lowercase hex digest" do
+    expect(Digest::Blake3.hexdigest(test_string)).to match(/\A[0-9a-f]{64}\z/)
+  end
+
+  it "Blake3ruby::Hasher#finalize on a fresh hasher matches the empty-string hash" do
+    expect(Digest::Blake3::Hasher.new.finalize).to eq(empty_string_hash)
+  end
+
+  it "Blake3ruby::Hasher#update returns a Hasher" do
+    expect(Digest::Blake3::Hasher.new.update("anything")).to be_a(Digest::Blake3::Hasher)
+  end
+
+  it "Blake3ruby::Hasher#finalize is idempotent" do
+    hasher = Digest::Blake3::Hasher.new
+    hasher.update(test_string)
+    first = hasher.finalize
+    second = hasher.finalize
+    expect([first, second]).to eq([test_string_hash, test_string_hash])
+  end
+
+  it "hashes input larger than a single 64-byte BLAKE3 chunk" do
+    long_input = "a" * 200
+    hasher = Digest::Blake3::Hasher.new
+    hasher.update(long_input)
+    expect(hasher.finalize).to eq(Digest::Blake3.hexdigest(long_input))
+  end
+
+  it "Blake3ruby#derive_key is sensitive to context" do
+    k1 = Digest::Blake3.derive_key("context A", "key material")
+    k2 = Digest::Blake3.derive_key("context B", "key material")
+    expect(k1).not_to eq(k2)
   end
 end
