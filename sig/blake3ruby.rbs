@@ -4,12 +4,12 @@ end
 
 module Digest
   module Blake3
-    def self.hexdigest(subject: String) -> String
-    def self.derive_key(context: String, key: String) -> String
+    def self.hexdigest: (String subject) -> String
+    def self.derive_key: (String context, String key) -> String
 
     class Hasher
       def self.new: () -> Digest::Blake3::Hasher
-      def update: (subject: String) -> Digest::Blake3::Hasher
+      def update: (String subject) -> Digest::Blake3::Hasher
       def finalize: () -> String
     end
   end

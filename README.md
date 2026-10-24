@@ -9,7 +9,7 @@ Tested on Ruby 3.3, 3.4 and 4.0.
 You will need to have Rust installed on your system, and the `cargo` command available in your path.
 See [here](https://www.rust-lang.org/tools/install) for instructions on how to install Rust.
 Rust is only required to build the gem, not to use it.
-Minimally, you will need Rust 1.6 or later.
+Minimally, you will need Rust 1.85 or later (required by the magnus 0.9 bindings).
 
 
 ## Installation
